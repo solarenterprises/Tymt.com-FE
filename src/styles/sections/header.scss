@@ -1,0 +1,100 @@
+.header-container{
+    margin: 0 auto;
+    width: 100%;
+    height: 72px;
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: fixed;
+    z-index: 999;
+}
+.scroll-header {
+    // background: #8080801A;
+    // background-blend-mode: luminosity;
+    padding: 8px 24px 8px 24px;
+    border-radius: 16px;
+    // border: 1px solid;
+    // border-image-source: linear-gradient(92deg, rgba(255, 255, 255, 0.1) 1.69%, rgba(255, 255, 255, 0.4) 50.48%, rgba(255, 255, 255, 0.1) 98.31%);
+    background-color: transparent;
+    border: double 1px transparent;
+    background-image: linear-gradient(transparent, transparent), radial-gradient(circle at top left, rgba(255, 255, 255, 0.1) 1.69%, rgba(255, 255, 255, 0.4) 50.48%, rgba(255, 255, 255, 0.1) 98.31%);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    backdrop-filter: blur(10px);
+}
+
+.header-container .dropdown-content{
+    display: none;
+}
+.header-container .download-btn:hover .dropdown-content {display: block;}
+.header-container .download {
+    background: rgb(67 67 67 / 85%);
+    background-blend-mode: luminosity;
+    border-radius: 18px;
+    padding: 16px 24px 16px 24px;
+    position: absolute;
+    text-align: right;
+    top: 50px;
+    left: 0px;
+    backdrop-filter: blur(100px);
+}
+.header-container .download-item >a> img {
+    padding-top: 5px;
+}
+.header-container .download-item:hover {
+    background-color: #7C7C7C33;
+    border-radius: 8px;
+}
+.lang-btn.active{
+    background: #8080801A;
+    color: white;
+}
+.lang-btn{
+    &:hover{
+        background: #8080801A;
+        color: white;
+    }
+}
+
+@media (max-width: 992px) {
+    
+    .header-container.active{
+        border-radius: 16px 16px 0px 0px;
+        // background: rgb(75 73 73 / 86%);
+        backdrop-filter: blur(100px);
+        border-bottom: solid 1px wheat;
+    }
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        width: calc(100% + 2px);
+        left: -1px;
+        background: rgb(75 73 73 / 86%);
+        padding: 0px 25px 24px;
+        border-radius: 0px 0px 24px 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: none;
+        text-align: center;
+        backdrop-filter: blur(100px);
+    }
+
+    .navbar-collapse>.nav-link{
+        padding: 10px;
+    }
+    .navbar-collapse>.header-btn{
+        margin: 10px;
+    }
+    
+
+    .mobile-toggle-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .navbar-toggler {
+        padding: 0;
+        border: none;
+        box-shadow: none;
+    }
+}
