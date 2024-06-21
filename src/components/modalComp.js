@@ -73,32 +73,34 @@ const ModalComp = ({ open, setOpen }) => {
   const [msg, setMsg] = useState("");
   const [os] = useState(OS(window));
   const { t } = useTranslation();
-
+  
   const handleClose = useCallback(() => {
     setOpen(!open);
   }, [open, setOpen]);
 
   const handleSubmit = async () => {
-    const data = {
-      username: name,
-      email: email,
-      subject: subject,
-      email_content: msg
-    };
-    console.log("subject", subject)
-    try {
-      const response = await axios.post('http://localhost:3000/api/auth/send-email', data);
-      console.log('Email sent successfully:', response.data);
-    } catch (error) {
-      if (error.response) {
-        // The request was made, the server responded with a status code outside the range of 2xx
-        console.error('Error sending email:', error.response.data);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error('No response received:', error.request);
-      } else {
-        // Something happened in setting up the request that triggered an error
-        console.error('Error:', error.message);
+    if(name && email && subject && msg) {
+      const data = {
+        username: name,
+        email: email,
+        subject: subject,
+        email_content: msg
+      };
+      
+      try {
+        const response = await axios.post('http://localhost:3000/api/auth/send-email', data);
+        console.log('Email sent successfully:', response.data);
+      } catch (error) {
+        if (error.response) {
+          // The request was made, the server responded with a status code outside the range of 2xx
+          console.error('Error sending email:', error.response.data);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error('No response received:', error.request);
+        } else {
+          // Something happened in setting up the request that triggered an error
+          console.error('Error:', error.message);
+        }
       }
     }
   }
@@ -127,8 +129,8 @@ const ModalComp = ({ open, setOpen }) => {
         <Form.Control value={name} onChange={(e) => setName(e.target.value)} placeholder={t("name")} />
         <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder={t("email")} />
         <Select
-          value={subject}
-          onChange={(e) => setSubject(e.value)}
+          defaultValue={subject}
+          onChange={(e) => {setSubject(e.value)}}
           styles={customStyles}
           options={options}
           placeholder={t("subject")}
