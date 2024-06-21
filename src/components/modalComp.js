@@ -86,9 +86,9 @@ const ModalComp = ({ open, setOpen }) => {
         subject: subject,
         email_content: msg
       };
-      
       try {
-        const response = await axios.post('http://localhost:3000/api/auth/send-email', data);
+        const baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_TYMPT_DEV_URL : process.env.REACT_APP_TYMPT_PRO_URL
+        const response = await axios.post(`${baseURL}/auth/send-email`, data);
         console.log('Email sent successfully:', response.data);
       } catch (error) {
         if (error.response) {
@@ -102,6 +102,7 @@ const ModalComp = ({ open, setOpen }) => {
           console.error('Error:', error.message);
         }
       }
+      setOpen(false);
     }
   }
 
