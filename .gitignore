@@ -20,8 +20,10 @@
 .env.development.local
 .env.test.local
 .env.production.local
-/public/intercom.json
+/public/tawk.json
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.env
