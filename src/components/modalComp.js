@@ -82,7 +82,8 @@ const ModalComp = ({ open, setOpen }) => {
     if(name && email && subject && msg) {
       const data = {
         username: name,
-        email: email,
+        sender_email: email,
+        recipient_email: process.env.REACT_APP_SUPPORT_EMAIL_TO,
         subject: subject,
         email_content: msg
       };
