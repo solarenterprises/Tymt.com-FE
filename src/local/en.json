@@ -52,6 +52,9 @@
     "download-for-linux": "Download for Linux",
     "download-for-windows": "Download for Windows",
     "download-for-mac" : "Download for macOS",
-    "jap": "Jap"
+    "jap": "Jap",
+    "message": "Message",
+    "invalid-email": "Invalid email address.",
+    "error-required": "{{field}} is required."
   }
 }

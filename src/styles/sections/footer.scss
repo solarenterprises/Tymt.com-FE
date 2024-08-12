@@ -12,7 +12,9 @@
     background: black;
     border-radius: 10px
 }
-
+.hidden {
+    display: none;
+}
 
 @media(max-width: 767px){
     .footer-right, .footer-logo, .footer-terms, .twitter-logo{
