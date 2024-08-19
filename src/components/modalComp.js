@@ -142,7 +142,8 @@ const ModalComp = ({ open, setOpen }) => {
             recipient_email: process.env.REACT_APP_SUPPORT_EMAIL_TO,
             subject: subject,
             email_content: msg,
-            recaptcha_token: token
+            recaptcha_token: token,
+            site_key: process.env.REACT_APP_RECAPTCHA_SITE_KEY
           };
           try {
             const baseURL = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_TYMPT_DEV_URL : process.env.REACT_APP_TYMPT_PRO_URL
