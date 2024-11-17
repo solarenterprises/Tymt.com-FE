@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MainLayout from './layout';
 import { Navigate, Routes, Route} from "react-router-dom";
 import HomePage from "./view";
+import "./App.css"
 // import Error from './view/404';
 // import Waitlist from './view/Waitlist';
 // import ContactForm from './view/ContactForm';
