@@ -15,7 +15,6 @@ const MainLayout = () => {
       .get(releaseAPI)
       .then((response) => {
         let release = response.data.result.data[0] ? response.data.result.data[0] : {};
-        console.log(release);
         if (release?.downloadLinks) {
           setLinks(release?.downloadLinks);
         }
