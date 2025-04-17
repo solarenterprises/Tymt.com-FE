@@ -23,6 +23,7 @@ const MainLayout = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
+
   return (
     <LinksContext.Provider value={links}>
       <div id="app" className="body">
