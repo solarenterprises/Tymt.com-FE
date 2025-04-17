@@ -103,7 +103,7 @@ const InstallSection = () => {
                                 <div className="fs-24 white">{t("if-you-are-a-publisher")}</div>
                                 <div className="fs-16 white">{t("publisher-contact")}</div>
                                 <div>   
-                                    <div onClick={()=>setShow(true)} className={`${osBtn} black-btn fs-18 header-btn bold-semi white`}>{t("contact-us")}</div>
+                                    <div onClick={() => { /* setShow(true); */ window.open("https://forms.gle/7cco7U3R1PCSWF6V6", "_blank"); } } className={`${osBtn} black-btn fs-18 header-btn bold-semi white`}>{t("contact-us")}</div>
                                 </div>
                             </div>
                             <div><img src={publisherImg} alt="publisher"/></div>
