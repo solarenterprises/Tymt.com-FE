@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import MainLayout from './layout';
-import { Navigate, Routes, Route} from "react-router-dom";
+import MainLayout from "./layout";
+import { Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "./view";
-import "./App.css"
+import "./App.css";
 // import Error from './view/404';
 // import Waitlist from './view/Waitlist';
 // import ContactForm from './view/ContactForm';
@@ -29,7 +29,7 @@ function App() {
       {!loading && (
         <>
           <Route path="/" element={<MainLayout />}>
-            <Route path="/" element={<Navigate to="/home" replace />}/>
+            <Route path="/" element={<Navigate to="/home" replace />} />
             <Route path="/home" element={<HomePage />} />
           </Route>
           {/* <Route path="*" element={<Error />}></Route> */}
