@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Marquee from "react-fast-marquee";
 import axios from "axios";
+import { OS } from "../utils/getEnv";
 import GameCard from "../components/gameCard";
 import { replaceStr } from "../utils/helper";
 import logoImg from "../assets/logos/game-logo.svg";
@@ -9,6 +10,8 @@ import logoImg from "../assets/logos/game-logo.svg";
 const Coming = () => {
   const { t } = useTranslation();
 
+  const [os] = useState(OS(window));
+  const [osBtn, setOsBtn] = useState("common-btn-win");
   const [gamePagination, setGamePagination] = useState(null);
 
   const fetchFeaturedGameList = async (query = { page: 1, limit: 72, sort: '{"downloadCount":-1}' }) => {
@@ -20,6 +23,14 @@ const Coming = () => {
       throw new Error(err.response?.data?.error ?? "Failed to fetchFeaturedGameList");
     }
   };
+
+  useEffect(() => {
+    if (os === "Windows OS") {
+      setOsBtn("common-btn-win");
+    } else {
+      setOsBtn("common-btn-linux");
+    }
+  }, [os]);
 
   useEffect(() => {
     fetchFeaturedGameList()
@@ -64,6 +75,12 @@ const Coming = () => {
             </Marquee>
           </div>
         )}
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", margin: "40px", gap: "24px" }}>
+          <div className="fs-38 white">List your game with us. It's free!</div>
+          <a href="https://forms.gle/xuMe6vdf9JYAgsNB8" className={`${osBtn} download-btn red-btn fs-18 bold-semi white`}>
+            Contact Us
+          </a>
+        </div>
       </div>
     </section>
   );
