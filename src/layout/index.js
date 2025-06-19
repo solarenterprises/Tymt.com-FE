@@ -8,7 +8,7 @@ import { LinksContext } from "../linksContext";
 const MainLayout = () => {
   // const releaseAPI = "https://tymt.com/api/uploads/release.json";
   const [links, setLinks] = useState([
-    { "platformName": "Windows", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_x64_en-US.msi" },
+    { "platformName": "Windows", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_x64-setup.exe" },
     { "platformName": "Linux", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_amd64.AppImage" },
     { "platformName": "mac-apple", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_aarch64.dmg" },
     { "platformName": "mac-intel", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_x64.dmg" }
