@@ -9,7 +9,8 @@ import { OS } from "../utils/getEnv";
 const DownloadComp = (props) => {
     const [windowLink, setWindowLink] = useState("");
     const [linuxLink, setLinuxLink] = useState("");
-    const [macOSLink, setMacOSLink] = useState("");
+    const [appleLink, setAppleLink] = useState("");
+    const [intelLink, setIntelLink] = useState("");
     const [os] = useState(OS(window));
     const { t } =  useTranslation();
     const [osBtn, setOsBtn] = useState("common-btn-win");
@@ -30,8 +31,11 @@ const DownloadComp = (props) => {
                     case "Linux":
                         setLinuxLink(props.links[0].link);
                         break;
-                    case "macOS":
-                        setMacOSLink(props.links[0].link);
+                    case "mac-apple":
+                        setAppleLink(props.links[0].link);
+                        break;
+                    case "mac-intel":
+                        setIntelLink(props.links[0].link);
                         break;
                     default:
                         break;
@@ -45,8 +49,11 @@ const DownloadComp = (props) => {
                     case "Linux":
                         setLinuxLink(props.links[1].link);
                         break;
-                    case "macOS":
-                        setMacOSLink(props.links[1].link);
+                    case "mac-apple":
+                        setAppleLink(props.links[1].link);
+                        break;
+                    case "mac-intel":
+                        setIntelLink(props.links[1].link);
                         break;
                     default:
                         break;
@@ -60,8 +67,29 @@ const DownloadComp = (props) => {
                     case "Linux":
                         setLinuxLink(props.links[2].link);
                         break;
-                    case "macOS":
-                        setMacOSLink(props.links[2].link);
+                    case "mac-apple":
+                        setAppleLink(props.links[2].link);
+                        break;
+                    case "mac-intel":
+                        setIntelLink(props.links[2].link);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (props.links[3]) {
+                switch (props.links[3].platformName) {
+                    case "Windows":
+                        setWindowLink(props.links[3].link);
+                        break;
+                    case "Linux":
+                        setLinuxLink(props.links[3].link);
+                        break;
+                    case "mac-apple":
+                        setAppleLink(props.links[3].link);
+                        break;
+                    case "mac-intel":
+                        setIntelLink(props.links[3].link);
                         break;
                     default:
                         break;
@@ -90,10 +118,19 @@ const DownloadComp = (props) => {
             </div>
             <div className='down-divider'></div>
             <div className='download-item action-button'>
-                <a href={macOSLink} target='_blank' rel="noreferrer">
+                <a href={appleLink} target='_blank' rel="noreferrer">
                     <div className="d-flex justity-content-center align-items-center">
-                        <div><img src={macIcon} alt="mac download"/></div>
-                        <div className={`${osBtn} fs-18 white`}>{t("download-for-mac")}</div>
+                        <div><img src={macIcon} alt="mac-apple download"/></div>
+                        <div className={`${osBtn} fs-18 white`}>{t("download-for-mac-apple")}</div>
+                    </div>
+                </a>
+            </div>
+            <div className='down-divider'></div>
+            <div className='download-item action-button'>
+                <a href={intelLink} target='_blank' rel="noreferrer">
+                    <div className="d-flex justity-content-center align-items-center">
+                        <div><img src={macIcon} alt="mac-intel download"/></div>
+                        <div className={`${osBtn} fs-18 white`}>{t("download-for-mac-intel")}</div>
                     </div>
                 </a>
             </div>
