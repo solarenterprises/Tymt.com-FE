@@ -51,7 +51,8 @@
     "gerneral-inquiry": "一般的なお問い合わせ",
     "download-for-linux": "Linux 用のダウンロード",
     "download-for-windows": "Windows 用のダウンロード",
-    "download-for-mac": "macOS用にダウンロード",
+    "download-for-mac-intel": "macOS (Intel)用にダウンロード",
+    "download-for-mac-apple": "macOS (Apple silicon)用にダウンロード",
     "jap": "日本"
   }
 }
