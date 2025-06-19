@@ -10,8 +10,8 @@ const MainLayout = () => {
   const [links, setLinks] = useState([
     { "platformName": "Windows", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_x64_en-US.msi" },
     { "platformName": "Linux", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_amd64.AppImage" },
-    { "platformName": "mac-apple", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_aarch64.app.tar.gz" },
-    { "platformName": "mac-intel", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_x64.app.tar.gz" }
+    { "platformName": "mac-apple", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_aarch64.dmg" },
+    { "platformName": "mac-intel", "link": "https://github.com/solarenterprises/tymt-launcher-client-tauri/releases/download/v2.2.2/tymtLauncher_2.2.2_x64.dmg" }
   ]);
 
   // useEffect(() => {
